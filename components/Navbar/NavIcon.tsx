@@ -14,19 +14,19 @@ export default function NavIcon() {
           <AvatarFallback>ST</AvatarFallback>
         </Avatar>
         <ul className='flex items-center gap-4'>
-          <li className='text-xs'>
-            <a href='https://github.com/Siravitt' target='_blank'>
+          <li className='text-xs duration-150 hover:text-slate-200'>
+            <a href='' target='_blank'>
               <span className='sr-only'>Email</span>
               <Mail />
             </a>
           </li>
-          <li className='text-xs'>
+          <li className='text-xs duration-150 hover:text-slate-200'>
             <a href='https://github.com/Siravitt' target='_blank'>
               <span className='sr-only'>Github</span>
               <Github />
             </a>
           </li>
-          <li className='text-xs'>
+          <li className='text-xs duration-150 hover:text-slate-200'>
             <a
               href='https://www.linkedin.com/in/siravit-thaenrattanavijit-137b15244/'
               target='_blank'
@@ -35,7 +35,7 @@ export default function NavIcon() {
               <Linkedin />
             </a>
           </li>
-          <li className='text-xs'>
+          <li className='text-xs duration-150 hover:text-slate-200'>
             <a href='https://www.instagram.com/flamesiravittt/' target='_blank'>
               <span className='sr-only'>Instagram</span>
               <Instagram />

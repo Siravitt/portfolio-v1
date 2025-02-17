@@ -1,5 +1,5 @@
 import Navbar from '../Navbar/Navbar';
-import NavIcon from '../NavIcon/NavIcon';
+import NavIcon from '../Navbar/NavIcon';
 
 export default function Header() {
   return (
@@ -12,7 +12,7 @@ export default function Header() {
           Software Engineer
         </h2>
         <p className='mt-4 max-w-xs leading-normal'>
-          I build accessible, pixel-perfect digital experiences for the web.
+          Turning ideas into real life products.
         </p>
         <Navbar />
       </div>
