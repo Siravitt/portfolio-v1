@@ -35,7 +35,7 @@ export const EXPERIENCE: Experience[] = [
       'Javascript',
       'Typescript',
       'Angular',
-      'Arc GIS',
+      'ArcGIS',
       'HTML & SCSS',
     ],
     url: 'https://www.geotalent.co.th/',

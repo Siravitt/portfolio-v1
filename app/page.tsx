@@ -16,7 +16,6 @@ export default function HomePage() {
             <ExperienceContainer />
             <ProjectContainer />
           </main>
-          <footer>footer</footer>
         </div>
       </div>
     </div>

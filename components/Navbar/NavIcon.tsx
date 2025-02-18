@@ -1,3 +1,5 @@
+'use client';
+
 import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
@@ -15,10 +17,15 @@ export default function NavIcon() {
         </Avatar>
         <ul className='flex items-center gap-4'>
           <li className='text-xs duration-150 hover:text-slate-200'>
-            <a href='' target='_blank'>
+            <button
+              className='flex'
+              onClick={() => {
+                window.open('mailto:' + 'siravitt.tan@gmail.com');
+              }}
+            >
               <span className='sr-only'>Email</span>
               <Mail />
-            </a>
+            </button>
           </li>
           <li className='text-xs duration-150 hover:text-slate-200'>
             <a href='https://github.com/Siravitt' target='_blank'>
