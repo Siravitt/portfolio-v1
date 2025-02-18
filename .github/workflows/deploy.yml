@@ -1,23 +1,44 @@
-name: Production Tag Deployment
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+name: Production Deployment
+
 on:
   push:
-    # Pattern matched against refs/tags
     tags:
-      - '*' # Push events to every tag not containing /
+      - 'v*' # Trigger only on tags starting with 'v'
+
 jobs:
-  Deploy-Production:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Install Vercel CLI
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
-      - name: Pull Vercel Environment Information
+
+      # Step 3: Debug to Check Secrets (Optional)
+      - name: Debug Secrets
+        run: |
+          echo "VERCEL_ORG_ID: $VERCEL_ORG_ID"
+          echo "VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID"
+          echo "VERCEL_TOKEN: $VERCEL_TOKEN"
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      # Step 4: Pull Vercel Environment
+      - name: Pull Vercel Environment
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: vercel pull --yes --environment=production
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=$VERCEL_TOKEN
-      - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+
+      # Step 5: Deploy to Vercel
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --prod
