@@ -1,4 +1,4 @@
-import AboutContainer from '@/components/AboutContainer/AboutContainer';
+import AboutContainer from '@/components/About/AboutContainer';
 import BackgroundHighlight from '@/components/BackgroundHighlight/BackgroundHighlight';
 import ExperienceContainer from '@/components/Experience/ExperienceContainer';
 import Header from '@/components/Header/Header';

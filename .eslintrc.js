@@ -9,6 +9,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'tailwindcss'],
   rules: {
     'tailwindcss/classnames-order': 'off',
+    '@next/next/no-img-element': 'off',
   },
   parser: '@typescript-eslint/parser',
   overrides: [
