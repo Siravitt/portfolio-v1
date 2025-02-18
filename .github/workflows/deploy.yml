@@ -18,18 +18,7 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
-      # Step 3: Debug to Check Secrets (Optional)
-      - name: Debug Secrets
-        run: |
-          echo "VERCEL_ORG_ID: $VERCEL_ORG_ID"
-          echo "VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID"
-          echo "VERCEL_TOKEN: $VERCEL_TOKEN"
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-
-      # Step 4: Pull Vercel Environment
+      # Step 3: Pull Vercel Environment
       - name: Pull Vercel Environment
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -37,7 +26,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: vercel pull --yes --environment=production
 
-      # Step 5: Deploy to Vercel
+      # Step 4: Deploy to Vercel
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
