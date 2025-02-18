@@ -29,8 +29,18 @@ export default function AboutContainer() {
           systems across various projects, ensuring high-quality performance and
           delivering solutions that meet user needs effectively.
         </p>
-        <p className='mb-4'>about-3</p>
-        <p className='mb-4'>about-4</p>
+        <p className='mb-4'>
+          In the past, I&apos;ve had the privilege of working in diverse
+          settings, including large corporations and collaborative teams, where
+          I contributed to developing software that drives meaningful outcomes.
+          My experience has allowed me to hone a versatile skill set and a
+          commitment to creating impactful solutions.
+        </p>
+        <p className='mb-4'>
+          Outside of work, I enjoy playing basketball, reading, spending time
+          with my family, and constantly seeking new knowledge to improve my
+          skills and work.
+        </p>
       </div>
     </section>
   );
