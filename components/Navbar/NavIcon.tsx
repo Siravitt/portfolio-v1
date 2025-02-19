@@ -48,6 +48,12 @@ export default function NavIcon() {
               <Instagram />
             </a>
           </li>
+          <li className='text-xs duration-150 hover:text-slate-200'>
+            <a href='https://www.instagram.com/flamesiravittt/' target='_blank'>
+              <span className='sr-only'>Instagram</span>
+              <Instagram />
+            </a>
+          </li>
         </ul>
       </CardContent>
     </Card>
